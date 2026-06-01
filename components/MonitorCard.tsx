@@ -1,4 +1,5 @@
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
+import { router } from "expo-router";
 
 import { Badge } from "./ui/Badge";
 import { Card } from "./ui/Card";
@@ -21,26 +22,30 @@ export function MonitorCard({
                                 lastScan = "2m ago",
                             }: MonitorCardProps) {
     return (
-        <Card className="mb-3">
-            <View className="flex-row items-start justify-between gap-4">
-                <View className="flex-1">
-                    <Text className="text-base font-bold text-slate-950">{keyword}</Text>
+        <TouchableOpacity
+            activeOpacity={0.85}
+            onPress={() => router.push("/monitor-details")}
+        >
+            <Card className="mb-3">
+                <View className="flex-row items-start justify-between gap-4">
+                    <View className="flex-1">
+                        <Text className="text-base font-bold text-slate-950">{keyword}</Text>
+                        <Text className="mt-1 text-sm text-slate-500">{location}</Text>
+                    </View>
 
-                    <Text className="mt-1 text-sm text-slate-500">{location}</Text>
+                    <Badge
+                        label={active ? "Active" : "Paused"}
+                        variant={active ? "green" : "gray"}
+                    />
                 </View>
 
-                <Badge
-                    label={active ? "Active" : "Paused"}
-                    variant={active ? "green" : "gray"}
-                />
-            </View>
-
-            <View className="mt-5 flex-row justify-between">
-                <InfoItem label="Max price" value={maxPrice} />
-                <InfoItem label="Matches" value={String(matches)} highlight />
-                <InfoItem label="Last scan" value={lastScan} />
-            </View>
-        </Card>
+                <View className="mt-5 flex-row justify-between">
+                    <InfoItem label="Max price" value={maxPrice} />
+                    <InfoItem label="Matches" value={String(matches)} highlight />
+                    <InfoItem label="Last scan" value={lastScan} />
+                </View>
+            </Card>
+        </TouchableOpacity>
     );
 }
 
@@ -56,10 +61,9 @@ function InfoItem({
     return (
         <View>
             <Text className="text-xs text-slate-400">{label}</Text>
-
             <Text
                 className={`mt-1 font-semibold ${
-                    highlight ? "text-orange-500" : "text-slate-900"
+                    highlight ? "text-teal-600" : "text-slate-900"
                 }`}
             >
                 {value}

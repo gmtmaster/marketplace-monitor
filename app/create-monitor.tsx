@@ -9,10 +9,23 @@ import { Input } from "../components/ui/Input";
 import { TogglePill } from "../components/ui/TogglePill";
 
 const categories = ["All", "Electronics", "Cars", "Bikes", "Home"];
+const sources = ["Facebook", "eBay", "Vinted"];
 
 export default function CreateMonitorScreen() {
     const [category, setCategory] = useState("All");
+    const [selectedSources, setSelectedSources] = useState<string[]>([
+        "Facebook",
+        "eBay",
+    ]);
     const [pushEnabled, setPushEnabled] = useState(true);
+
+    function toggleSource(source: string) {
+        setSelectedSources((current) =>
+            current.includes(source)
+                ? current.filter((item) => item !== source)
+                : [...current, source]
+        );
+    }
 
     return (
         <Screen>
@@ -24,7 +37,7 @@ export default function CreateMonitorScreen() {
 
                     <Text className="mt-2 text-base leading-7 text-slate-500">
                         Tell us what you are looking for and we will monitor new listings
-                        for you.
+                        across multiple marketplaces.
                     </Text>
 
                     <Card className="mt-6">
@@ -53,6 +66,21 @@ export default function CreateMonitorScreen() {
                         />
 
                         <Input label="Location" placeholder="e.g. Budapest" />
+
+                        <Text className="mb-3 text-sm font-semibold text-slate-700">
+                            Sources
+                        </Text>
+
+                        <View className="mb-5 flex-row flex-wrap gap-2">
+                            {sources.map((item) => (
+                                <TogglePill
+                                    key={item}
+                                    label={item}
+                                    active={selectedSources.includes(item)}
+                                    onPress={() => toggleSource(item)}
+                                />
+                            ))}
+                        </View>
 
                         <Text className="mb-3 text-sm font-semibold text-slate-700">
                             Category

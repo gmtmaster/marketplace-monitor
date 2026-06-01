@@ -16,7 +16,7 @@ export default function MonitorsScreen() {
                 </Text>
 
                 <View className="mt-6">
-                    <Button title="Create monitor" onPress={() => router.push("/create-monitor")} />
+                    <Button title="Create monitor" variant="secondary" onPress={() => router.push("/create-monitor")} />
                 </View>
 
                 <View className="mt-6">

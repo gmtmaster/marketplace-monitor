@@ -13,7 +13,7 @@ export function StatCard({ label, value, accent = "blue" }: StatCardProps) {
             <Text className="text-sm text-slate-500">{label}</Text>
             <Text
                 className={`mt-2 text-2xl font-bold ${
-                    accent === "blue" ? "text-blue-600" : "text-orange-500"
+                    accent === "blue" ? "text-blue-600" : "text-teal-600"
                 }`}
             >
                 {value}

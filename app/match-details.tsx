@@ -29,7 +29,7 @@ export default function MatchDetailsScreen() {
                         <Badge label="New" variant="orange" />
                     </View>
 
-                    <Text className="mt-5 text-4xl font-bold text-orange-500">
+                    <Text className="mt-5 text-4xl font-bold text-teal-500">
                         285 000 Ft
                     </Text>
 
@@ -46,7 +46,7 @@ export default function MatchDetailsScreen() {
                         </View>
                     </Card>
 
-                    <Card className="mt-4 border-blue-100 bg-blue-50">
+                    <Card className="mt-4 border-indigo-100 bg-indigo-50">
                         <Text className="text-lg font-bold text-slate-950">
                             Deal score
                         </Text>

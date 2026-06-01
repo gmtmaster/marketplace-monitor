@@ -8,12 +8,12 @@ type BadgeProps = {
 export function Badge({ label, variant = "blue" }: BadgeProps) {
     const styles = {
         blue: {
-            box: "bg-blue-100",
-            text: "text-blue-700",
+            box: "bg-indigo-100",
+            text: "text-indigo-700",
         },
         orange: {
-            box: "bg-orange-100",
-            text: "text-orange-700",
+            box: "bg-teal-100",
+            text: "text-teal-700",
         },
         green: {
             box: "bg-emerald-100",

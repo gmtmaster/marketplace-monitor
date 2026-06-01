@@ -13,13 +13,13 @@ export function Button({
                        }: ButtonProps) {
     const variantStyle =
         variant === "primary"
-            ? "bg-blue-600"
-            : "bg-orange-100 border border-orange-200";
+            ? "bg-indigo-500"
+            : "bg-indigo-100 border border-indigo-500";
 
     const textStyle =
         variant === "primary"
             ? "text-white"
-            : "text-orange-700";
+            : "text-indigo-700";
 
     return (
         <TouchableOpacity

@@ -12,12 +12,12 @@ export default function DashboardScreen() {
         <Screen>
             <ScrollView className="flex-1">
                 <View className="px-5 pb-10 pt-6">
-                    <Text className="text-sm font-semibold uppercase tracking-widest text-orange-500">
+                    <Text className="text-sm font-semibold uppercase tracking-widest text-teal-600">
                         Marketplace Monitor
                     </Text>
 
-                    <Card className="mt-4 overflow-hidden border-blue-100 bg-blue-600">
-                        <Text className="text-sm font-semibold text-blue-100">
+                    <Card className="mt-4 overflow-hidden border-blue-100 bg-teal-600">
+                        <Text className="text-sm font-semibold text-indigo-100">
                             Good evening
                         </Text>
 
@@ -101,7 +101,7 @@ function ActivityItem({
                 last ? "" : "border-b border-slate-100"
             }`}
         >
-            <View className="h-3 w-3 rounded-full bg-orange-400" />
+            <View className="h-3 w-3 rounded-full bg-teal-500" />
 
             <View className="flex-1">
                 <Text className="font-semibold text-slate-900">{title}</Text>

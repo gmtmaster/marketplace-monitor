@@ -38,7 +38,7 @@ export function MatchCard({
                                 {title}
                             </Text>
 
-                            <Text className="font-bold text-orange-500">{price}</Text>
+                            <Text className="font-bold text-teal-500">{price}</Text>
                         </View>
 
                         <Text className="mt-1 text-sm text-slate-500">
